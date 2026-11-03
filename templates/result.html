@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resume Analysis</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <div class="header">
+
+        <h1>AI Resume Analyzer</h1>
+
+        <p>Smart Resume Screening System</p>
+
+    </div>
+
+
+    <!-- Main Container -->
+
+    <div class="container">
+
+
+        <!-- ATS Score -->
+
+        <div class="card score-box">
+
+            <h2>ATS Score</h2>
+
+            <div class="score">
+                {{ ats_score }}%
+            </div>
+
+            <p class="score-text">
+                Resume Compatibility Score
+            </p>
+
+        </div>
+
+
+        <!-- Extracted Resume -->
+
+        <div class="card">
+
+            <h2>Extracted Resume Text</h2>
+
+            <div class="resume-text">
+
+                {{ resume_text }}
+
+            </div>
+
+        </div>
+
+
+        <!-- Skills -->
+
+        <div class="card">
+
+            <h2>Detected Skills</h2>
+
+            <div class="skills">
+
+                {% for skill in skills %}
+
+                    <span class="skill">
+                        {{ skill }}
+                    </span>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+
+        <!-- Missing Skills -->
+
+        <div class="card">
+
+            <h2>Missing Skills</h2>
+
+            {% for skill in missing_skills %}
+
+                <span class="missing">
+                    {{ skill }}
+                </span>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- Job Recommendations -->
+
+        <div class="card">
+
+            <h2>Recommended Job Roles</h2>
+
+            {% for role in job_roles %}
+
+                <div class="role">
+
+                    <span>
+                        {{ role }}
+                    </span>
+
+                    <span>
+                        Recommended
+                    </span>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- Suggestions -->
+
+        <div class="card">
+
+            <h2>Resume Improvement Suggestions</h2>
+
+            <div class="suggestion">
+
+                {% for suggestion in suggestions %}
+
+                    <p>✔ {{ suggestion }}</p>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+
+        <!-- Analyze Again -->
+
+        <div style="text-align:center; margin:30px;">
+
+            <a href="/" style="
+                background:#2563eb;
+                color:white;
+                padding:12px 25px;
+                border-radius:8px;
+                text-decoration:none;
+            ">
+                Analyze Another Resume
+            </a>
+
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
