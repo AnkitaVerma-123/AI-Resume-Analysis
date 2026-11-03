@@ -7,6 +7,7 @@ AI Resume Analyzer is a web-based Smart Resume Screening System developed using 
 The main objective of this project is to make the resume screening process easier and help candidates improve their resumes according to job requirements.
 
 Demo link: https://ai-resume-analysis-cphv.onrender.com
+
 🎯 Objectives
 
 - To automate the basic resume screening process.
